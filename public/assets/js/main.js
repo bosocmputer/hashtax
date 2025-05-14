@@ -105,15 +105,39 @@
     }
     window.addEventListener('load', toggleBacktotop)
     onscroll(document, toggleBacktotop)
-  }
-
-  /**
+  }  /**
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
+    e.preventDefault();
+    e.stopPropagation();
+
+    // ทำให้รองรับทั้งสองโครงสร้าง
+    const navbar = select('#navbar');
+    navbar.classList.toggle('navbar-mobile');
+    
+    // เปลี่ยนไอคอนและทำให้แน่ใจว่าคลิกได้
+    if (this.classList.contains('bi-list')) {
+      // เปลี่ยนเป็นปุ่ม X
+      this.classList.remove('bi-list');
+      this.classList.add('bi-x');
+      
+      // เพิ่ม inline style เพื่อให้ปุ่มอยู่ด้านหน้าเสมอ
+      this.style.position = 'fixed';
+      this.style.top = '15px';
+      this.style.right = '15px';
+      this.style.zIndex = '9999';
+    } else {
+      // เปลี่ยนกลับเป็นปุ่ม list
+      this.classList.remove('bi-x');
+      this.classList.add('bi-list');
+      
+      // รีเซ็ต style
+      this.style.position = '';
+      this.style.top = '';
+      this.style.right = '';
+      this.style.zIndex = '';
+    }
   })
 
   /**

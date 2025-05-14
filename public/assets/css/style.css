@@ -311,6 +311,9 @@ h6 {
   position: absolute;
   top: 15px;
   right: 15px;
+  z-index: 1000;
+  color: #fff;
+  cursor: pointer;
 }
 
 .navbar-mobile ul {
@@ -624,7 +627,7 @@ section {
 }
 
 .about .content .btn-learn-more {
-  font-family: "Poppins", sans-serif;
+  font-family: "Prompt", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -697,7 +700,7 @@ section {
 .why-us .accordion-list a {
   display: block;
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: "Prompt", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
@@ -781,7 +784,7 @@ section {
   font-weight: 700;
   font-size: 32px;
   color: #37517e;
-  font-family: "Poppins", sans-serif;
+  font-family: "Prompt", sans-serif;
 }
 
 .skills .content ul {
@@ -816,7 +819,7 @@ section {
   text-transform: uppercase;
   display: block;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: "Prompt", sans-serif;
   color: #37517e;
 }
 
@@ -953,7 +956,7 @@ section {
   transition: all 0.3s;
   padding: 8px 20px;
   border-radius: 50px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Prompt", sans-serif;
 }
 
 .portfolio #portfolio-flters li:hover,
@@ -1126,7 +1129,7 @@ section {
 .team .member h4 {
   font-weight: 700;
   margin-bottom: 5px;
-  font-size: 20px;
+  font-size: 18px;
   color: #37517e;
 }
 
@@ -1342,7 +1345,7 @@ section {
 .faq .faq-list a {
   display: block;
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: "Prompt", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
