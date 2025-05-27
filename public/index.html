@@ -39,6 +39,9 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
+    
+    <!-- Hero Section CSS File -->
+    <link href="assets/css/hero-section.css" rel="stylesheet" />
 
     <!-- =======================================================
   * Template Name: Arsha
@@ -136,88 +139,6 @@
           color: #e2e5e8;
         }
       }
-
-      /* Full Screen Hero Styles */
-      #hero {
-        width: 100%;
-        height: 100vh;
-        position: relative;
-        padding: 0;
-        overflow: hidden;
-      }
-      
-      .hero-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .hero-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        z-index: 1;
-        animation: zoomInOut 15s ease-in-out infinite alternate;
-      }
-      
-      @keyframes zoomInOut {
-        0% {
-          transform: scale(1);
-        }
-        100% {
-          transform: scale(1.1);
-        }
-      }
-      
-      .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(40, 58, 90, 0.5);
-        z-index: 2;
-      }
-      
-      #hero .container {
-        position: relative;
-        z-index: 3;
-      }
-      
-      #hero h1, #hero h2 {
-        color: #fff;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      }
-      
-      #hero h1 {
-        margin-bottom: 20px;
-        font-size: 48px;
-        font-weight: 700;
-      }
-      
-      #hero h2 {
-        margin-bottom: 30px;
-        font-size: 20px;
-        font-weight: 400;
-      }
-      
-      @media (max-width: 768px) {
-        #hero h1 {
-          font-size: 32px;
-        }
-        #hero h2 {
-          font-size: 18px;
-        }
-      }
     </style>
   </head>
 
@@ -250,22 +171,19 @@
     <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-      <div class="hero-container">
-        <div class="hero-bg" style="background-image: url('assets/img/photo3.jpg');"></div>
-        <div class="hero-overlay"></div>
+    <section id="hero" class="hero-fullscreen">
+      <div class="hero-background"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
         <div class="container">
           <div class="row">
             <div
-              class="col-lg-12 mx-auto d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 text-center"
+              class="col-lg-12 mx-auto d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               <h1>HASH-TAX Accounting and Audit Co., Ltd.</h1>
-              <h2>
-                สำนักงานบัญชีคู่คิด ที่พร้อมดูแล จัดการบัญชี และวางแผนภาษี
-                ให้ธุรกิจของคุณทุกขั้นตอน ตั้งแต่เริ่มต้นจนเติบโต
-              </h2>
+              <h2>สำนักงานบัญชีคู่คิด ที่พร้อมดูแล จัดการบัญชี และวางแผนภาษี ให้ธุรกิจของคุณทุกขั้นตอน ตั้งแต่เริ่มต้นจนเติบโต</h2>
               <div class="d-flex justify-content-center">
                 <a href="#about" class="btn-get-started scrollto">Get Started</a>
               </div>
@@ -686,6 +604,80 @@
                 <ul>
                   <li><i class="bx bx-check"></i> จดทะเบียนนายจ้างใหม่</li>
                   <li>
+                    <i class="bx bx-check"></i> ขึ้นทะเบียนผู้ประกันตนมาตรา 33
+                  </li>
+                  <li>
+                    <i class="bx bx-check"></i> แลการแจ้งเข้า-แจ้งออกของพนักงาน
+                  </li>
+                  <li>
+                    <i class="bx bx-check"></i>
+                    ให้คำแนะนำด้านสิทธิประโยชน์ของผู้ประกันตน
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Pricing Section -->
+
+      <!-- ======= About Us Section ======= -->
+      <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>เกี่ยวกับเรา</h2>
+          </div>
+
+          <div class="row content">
+            <div class="col-lg-6">
+              <p>สำนักงานบัญชี แฮชแท็คซ์ฯ การบริการบัญชีของเรา</p>
+              <ul>
+                <li>
+                  <i class="ri-check-double-line"></i>
+                  ได้บัญชีตามมาตรฐาน ผู้เชี่ยวชาญที่มีประสบการณ์
+                </li>
+                <li>
+                  <i class="ri-check-double-line"></i>
+                  เข้าถึงข้อมูลธุรกิจได้ตลอดเวลา
+                </li>
+                <li>
+                  <i class="ri-check-double-line"></i>
+                  ราคาบัญชีที่เข้าถึงได้
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+              <p>
+                เราเริ่มต้นจากความตั้งใจเล็ก ๆ ในปี พ.ศ. 2565 ภายใต้ชื่อ
+                “Hash-Tax Hub” เป็นกลุ่มนักบัญชี ผู้สอบบัญชี
+                และที่ปรึกษาด้านภาษีสมัยใหม่
+                ด้วยความมุ่งมั่นอยากช่วยให้เจ้าของธุรกิจเข้าใจเรื่องบัญชีและภาษีได้ง่ายขึ้น
+                และสามารถใช้ข้อมูลทางการเงินมาวางแผนและตัดสินใจได้อย่างมั่นใจ
+                ด้วยประสบการณ์กว่า 10 ปีในสายงานบัญชีและตรวจสอบบัญชี
+                เราเห็นปัญหาที่เจ้าของกิจการหลายคนเจอ
+                ไม่ว่าจะเป็นการขาดข้อมูลที่ทันสมัย การสื่อสารที่ล่าช้า
+                หรือความยุ่งยากของระบบบัญชีแบบเดิม
+                หลังจากได้รับการตอบรับและความไว้วางใจจากลูกค้าจำนวนมาก
+                เราจึงพัฒนาและขยายบริการขึ้นอย่างต่อเนื่อง จนในปี พ.ศ. 2566
+                ได้ก่อตั้ง บริษัท แฮช-แท็คซ์ แอคเคาท์ติ้ง แอนด์ ออดิท จำกัด
+                ขึ้นอย่างเป็นทางการ
+                เพื่อรองรับการให้บริการที่ครอบคลุมและเป็นระบบมากยิ่งขึ้น
+                เราคือทีมงานผู้เชี่ยวชาญด้านบัญชี ผู้สอบบัญชี และที่ปรึกษาภาษี
+                ที่เชื่อว่าการทำบัญชีไม่ควรเป็นเรื่องที่ยุ่งยากหรือไกลตัว
+                เรานำเทคโนโลยีบัญชีออนไลน์มาใช้ในการทำงานร่วมกับลูกค้า
+                เพื่อให้สามารถติดตามข้อมูลทางการเงินแบบเรียลไทม์
+                พร้อมรับคำแนะนำที่เป็นประโยชน์ต่อการวางแผนธุรกิจในทุกช่วงเวลา
+                แฮช-แท็คซ์
+                เราเชื่อว่าการทำบัญชีไม่ควรเป็นเรื่องที่ซับซ้อนหรือห่างไกล
+                เราไม่ได้เป็นแค่ผู้จัดทำบัญชี
+                เราอยากเป็นพาร์ทเนอร์ที่คุณไว้วางใจได้
+                พร้อมเดินไปด้วยกันในทุกก้าวของการเติบโตของธุรกิจคุณ
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ======= Team Section ======= -->
       <section id="team" class="team section-bg">
         <div class="container" data-aos="fade-up">
