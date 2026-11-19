@@ -1,420 +1,187 @@
-<!DOCTYPE html><html lang="th">
+<!DOCTYPE html>
+<html lang="th">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>บทความบัญชีและภาษี | HASH-TAX</title>
+    <meta
+      name="description"
+      content="บทความและคลังความรู้ด้านบัญชี ภาษีนิติบุคคล และการบริหารธุรกิจ โดย บริษัท แฮช-แท็คซ์ แอคเคาท์ติ้ง แอนด์ ออดิท จำกัด"
+    />
+    <link rel="icon" href="assets/opt/logoht.jpg" type="image/jpeg" />
+    <link rel="apple-touch-icon" href="assets/opt/logoht.jpg" />
 
-    <title>บทความ - HASHTAX</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
-
-    <!-- Favicons -->
-    <link href="assets/" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    
-    <style>
-      .article-section {
-        padding: 80px 0;
-        background-color: #f8f9fa;
-      }
-      
-      body {
-        touch-action: manipulation;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      .article-card {
-        height: 100%;
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-        margin-bottom: 30px;
-      }
-      
-      .article-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      }
-      
-      .entry-img {
-        overflow: hidden;
-        position: relative;
-      }
-      
-      .entry-img img {
-        transition: transform 0.5s ease;
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-      }
-      
-      .article-card:hover .entry-img img {
-        transform: scale(1.1);
-      }
-      
-      .entry-content {
-        padding: 25px;
-      }
-      
-      .entry-title {
-        font-size: 20px;
-        margin-bottom: 15px;
-        font-weight: 600;
-        transition: color 0.3s;
-      }
-      
-      .entry-title a {
-        color: #37517e;
-      }
-      
-      .entry-title a:hover {
-        color: #47b2e4;
-        text-decoration: none;
-      }
-      
-      .entry-meta {
-        margin-bottom: 15px;
-        color: #777;
-        font-size: 14px;
-      }
-      
-      .entry-meta ul {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      
-      .entry-meta li {
-        margin-right: 20px;
-      }
-      
-      .entry-meta i {
-        font-size: 16px;
-        margin-right: 5px;
-        color: #47b2e4;
-      }
-      
-      .read-more {
-        display: inline-block;
-        background: #47b2e4;
-        color: #fff;
-        padding: 8px 25px;
-        border-radius: 4px;
-        transition: 0.3s;
-        font-size: 14px;
-        margin-top: 15px;
-      }
-      
-      .read-more:hover {
-        background: #37517e;
-        color: #fff;
-        text-decoration: none;
-      }
-      
-      .breadcrumbs {
-        padding: 10px 0;
-        min-height: 40px;
-        margin-top: 74px;
-        background-color: #f3f5fa;
-      }
-      
-      .breadcrumbs h2 {
-        font-size: 36px;
-        font-weight: 600;
-        color: #37517e;
-        margin-bottom: 10px;
-      }
-      
-      .blog-filters {
-        margin-bottom: 40px;
-        text-align: center;
-      }
-      
-      .blog-filters .filter-item {
-        color: #37517e;
-        margin: 0 5px;
-        padding: 8px 20px;
-        cursor: pointer;
-        border-radius: 20px;
-        font-weight: 500;
-        transition: all 0.3s;
-        background: #fff;
-        border: 1px solid #e6e9ec;
-      }
-      
-      .blog-filters .filter-item:hover,
-      .blog-filters .filter-item.active {
-        background: #47b2e4;
-        color: #fff;
-        border-color: #47b2e4;
-      }
-
-      /* เพิ่ม Media Queries สำหรับ Mobile Responsiveness */
-      @media (max-width: 768px) {
-        .article-section {
-          padding: 40px 0;
-        }
-        
-        .breadcrumbs {
-          margin-top: 64px;
-          padding: 15px 0;
-        }
-        
-        .breadcrumbs h2 {
-          font-size: 28px;
-          margin-bottom: 5px;
-          text-align: center;
-        }
-        
-        .entry-content {
-          padding: 20px 15px;
-        }
-        
-        .entry-title {
-          font-size: 18px;
-          line-height: 1.4;
-        }
-        
-        .entry-meta li {
-          margin-right: 12px;
-          margin-bottom: 5px;
-          font-size: 12px;
-        }
-        
-        .blog-filters {
-          margin-bottom: 25px;
-          overflow-x: auto;
-          white-space: nowrap;
-          padding-bottom: 10px;
-          -webkit-overflow-scrolling: touch;
-        }
-        
-        .blog-filters::-webkit-scrollbar {
-          height: 4px;
-        }
-        
-        .blog-filters::-webkit-scrollbar-thumb {
-          background: rgba(71, 178, 228, 0.5);
-          border-radius: 4px;
-        }
-        
-        .blog-filters .filter-item {
-          display: inline-block;
-          margin: 0 3px;
-          padding: 6px 15px;
-          font-size: 13px;
-        }
-        
-        .read-more {
-          width: 100%;
-          text-align: center;
-          padding: 10px 15px;
-        }
-
-        .entry-img img {
-          height: 180px;
-        }
-      }
-      
-      @media (max-width: 576px) {
-        .article-card {
-          margin-bottom: 20px;
-        }
-        
-        .entry-meta ul {
-          flex-direction: column;
-        }
-        
-        .entry-meta li {
-          margin-bottom: 8px;
-          margin-right: 0;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/modern.css?v=20261119-4" />
   </head>
 
-  <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top header-inner-pages">
-      <div class="container d-flex align-items-center">
-        <h1 class="logo me-auto"><a href="index.html">HASH-TAX</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  <body data-title-key="art_page_title">
+    <header id="site-header" class="site-header solid">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <img src="assets/opt/logoht.jpg" alt="HASH-TAX Logo" class="brand-logo" width="38" height="38" />
+          <span>HASH-TAX</span>
+        </a>
 
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link" href="index.html">หน้าแรก</a></li>
-            <li><a class="nav-link" href="index.html#about">เกี่ยวกับเรา</a></li>
-            <li><a class="nav-link active" href="articles.html">บทความ</a></li>
-            <li>
-              <a class="nav-link" href="index.html#price">ค่าบริการทำบัญชี</a>
-            </li>
-            <li><a class="nav-link" href="index.html#contact">ติดต่อ</a></li>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav_home">หน้าแรก</a></li>
+            <li><a href="index.html#services" data-i18n="nav_services">บริการ</a></li>
+            <li><a href="index.html#pricing" data-i18n="nav_pricing">ค่าบริการ</a></li>
+            <li><a href="index.html#about" data-i18n="nav_about">เกี่ยวกับเรา</a></li>
+            <li><a href="articles.html" class="active" data-i18n="nav_articles">บทความ</a></li>
+            <li><a href="index.html#contact" data-i18n="nav_contact">ติดต่อ</a></li>
           </ul>
         </nav>
-        <!-- .navbar -->
-        
-        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <div class="header-actions">
+          <div class="lang-switcher" role="group" aria-label="Language switcher">
+            <button type="button" class="lang-btn active" data-lang="th">TH</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="zh">中文</button>
+          </div>
+
+          <a href="https://mali.hash-tax.com" target="_blank" rel="noopener noreferrer" class="btn btn-mali">
+            <i data-lucide="log-in"></i>
+            <span data-i18n="nav_mali">เข้าสู่ระบบ Mali</span>
+          </a>
+
+          <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
       </div>
     </header>
-    <!-- End Header -->
 
-    <main id="main">
-      <!-- ======= Breadcrumbs ======= -->
-      <section id="breadcrumbs" class="breadcrumbs">
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-panel">
+        <div class="mobile-drawer-head">
+          <a href="index.html" class="brand">
+            <img src="assets/opt/logoht.jpg" alt="HASH-TAX Logo" class="brand-logo" width="34" height="34" />
+            <span>HASH-TAX</span>
+          </a>
+          <button type="button" id="drawer-close" class="drawer-close" aria-label="Close menu">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <div class="lang-switcher" role="group" aria-label="Mobile language switcher">
+          <button type="button" class="lang-btn active" data-lang="th">ไทย</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="zh">中文</button>
+        </div>
+
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" data-i18n="nav_home">หน้าแรก</a></li>
+          <li><a href="index.html#services" data-i18n="nav_services">บริการ</a></li>
+          <li><a href="index.html#pricing" data-i18n="nav_pricing">ค่าบริการ</a></li>
+          <li><a href="index.html#about" data-i18n="nav_about">เกี่ยวกับเรา</a></li>
+          <li><a href="articles.html" data-i18n="nav_articles">บทความ</a></li>
+          <li><a href="index.html#contact" data-i18n="nav_contact">ติดต่อ</a></li>
+        </ul>
+
+        <a href="https://mali.hash-tax.com" target="_blank" rel="noopener noreferrer" class="btn btn-mali-solid">
+          <i data-lucide="log-in"></i>
+          <span data-i18n="nav_mali">เข้าสู่ระบบ Mali</span>
+        </a>
+      </div>
+    </div>
+
+    <main>
+      <section class="page-hero">
         <div class="container">
-          <h2>บทความความ</h2>
+          <ol class="breadcrumb-nav">
+            <li><a href="index.html" data-i18n="art_crumb_home">หน้าแรก</a></li>
+            <li>/</li>
+            <li data-i18n="art_crumb_list">บทความ</li>
+          </ol>
+          <span class="badge badge-glass" data-i18n="art_kicker">คลังความรู้</span>
+          <h1 data-i18n="art_heading">บทความด้านบัญชี ภาษี และการบริหารธุรกิจ</h1>
+          <p data-i18n="art_desc"></p>
         </div>
       </section>
-      <!-- End Breadcrumbs -->
 
-    
-
-      <!-- ======= Blog Section ======= -->
-      <section id="blog" class="article-section">
-        <div class="container" data-aos="fade-up">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-              <article class="article-card">
-                <div class="entry-img">
-                  <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="ภาษีนิติบุคคล" class="img-fluid" loading="lazy">
+      <section class="section section-muted">
+        <div class="container">
+          <div class="articles-grid">
+            <article class="article-card reveal">
+              <a href="article-1.html">
+                <img src="assets/opt/image2.jpg" alt="ภาษีนิติบุคคล 2567" class="article-card-img" loading="lazy" />
+              </a>
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span data-i18n="art1_author"></span>
+                  <span>•</span>
+                  <span data-i18n="art1_date"></span>
                 </div>
+                <h2><a href="article-1.html" data-i18n="art1_title"></a></h2>
+                <p data-i18n="art1_excerpt"></p>
+                <a href="article-1.html" class="btn btn-primary" data-i18n="art_read_btn"></a>
+              </div>
+            </article>
 
-                <div class="entry-content">
-                  <h2 class="entry-title">
-                    <a href="article-1.html">ภาษีนิติบุคคล 2567: สิ่งที่ผู้ประกอบการต้องรู้</a>
-                  </h2>
-
-                  <div class="entry-meta">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">ทีมงาน HASHTAX</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#">1 มิถุนายน 2567</a></li>
-                    </ul>
-                  </div>
-
-                  <p>
-                    การเตรียมความพร้อมสำหรับการยื่นภาษีนิติบุคคลปี 2567 สิ่งที่ผู้ประกอบการทุกคนต้องรู้ การเปลี่ยนแปลงกฎระเบียบใหม่ และวิธีการวางแผนภาษีให้มีประสิทธิภาพ
-                  </p>
-                  <div class="read-more">
-                    <a href="article-1.html" style="color: #FFF;">อ่านเพิ่มเติม</a>
-                  </div>
+            <article class="article-card reveal">
+              <img src="assets/opt/photo2.jpg" alt="บริหารการเงิน SME" class="article-card-img" loading="lazy" />
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span data-i18n="art2_author"></span>
+                  <span>•</span>
+                  <span data-i18n="art2_date"></span>
                 </div>
-              </article>
-            </div>
+                <h2 data-i18n="art2_title"></h2>
+                <p data-i18n="art2_excerpt"></p>
+                <span class="btn btn-outline" style="opacity:0.65;cursor:default" data-i18n="art_status_soon"></span>
+              </div>
+            </article>
 
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <article class="article-card">
-                <div class="entry-img">
-                  <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80" alt="บริหารการเงิน SME" class="img-fluid" loading="lazy">
+            <article class="article-card reveal">
+              <img src="assets/opt/image3.jpg" alt="ซอฟต์แวร์บัญชี" class="article-card-img" loading="lazy" />
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span data-i18n="art3_author"></span>
+                  <span>•</span>
+                  <span data-i18n="art3_date"></span>
                 </div>
-
-                <div class="entry-content">
-                  <h2 class="entry-title">
-                    <a href="#">5 เทคนิคการบริหารการเงินสำหรับธุรกิจ SME</a>
-                  </h2>
-
-                  <div class="entry-meta">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">ชนันพัทธ์ กิตติ์พัชรกุลโชติ</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#">15 พฤษภาคม 2567</a></li>
-                    </ul>
-                  </div>
-
-                  <p>
-                    การบริหารการเงินที่ดีคือหัวใจสำคัญของธุรกิจ SME เรารวบรวม 5 เทคนิคที่ช่วยให้ธุรกิจของคุณมีสภาพคล่องทางการเงินและเติบโตอย่างยั่งยืน
-                  </p>
-                  <div class="read-more">
-                    <a href="article-1.html" style="color: #FFF;">อ่านเพิ่มเติม</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-              <article class="article-card">
-                <div class="entry-img">
-                  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="ซอฟต์แวร์บัญชี" class="img-fluid" loading="lazy">
-                </div>
-
-                <div class="entry-content">
-                  <h2 class="entry-title">
-                    <a href="#">การเลือกใช้ซอฟต์แวร์บัญชีที่เหมาะกับธุรกิจของคุณ</a>
-                  </h2>
-
-                  <div class="entry-meta">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">อทิตยา แสงอาทิตย์</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#">5 เมษายน 2567</a></li>
-                    </ul>
-                  </div>
-
-                  <p>
-                    ปัจจุบันมีซอฟต์แวร์บัญชีมากมายในตลาด แต่ทำอย่างไรให้เลือกได้ถูกต้องและเหมาะสมกับขนาดและประเภทธุรกิจของคุณ คำแนะนำจากผู้เชี่ยวชาญด้านบัญชี
-                  </p>
-                  <div class="read-more">
-                   <a href="article-1.html" style="color: #FFF;">อ่านเพิ่มเติม</a>
-                  </div>
-                </div>
-              </article>
-            </div>
+                <h2 data-i18n="art3_title"></h2>
+                <p data-i18n="art3_excerpt"></p>
+                <span class="btn btn-outline" style="opacity:0.65;cursor:default" data-i18n="art_status_soon"></span>
+              </div>
+            </article>
           </div>
         </div>
-      </section><!-- End Blog Section -->
+      </section>
+    </main>
 
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-      <div class="container footer-bottom clearfix">
-        <div class="copyright">
-          &copy; Copyright <strong><span>HASHTAX</span></strong>. All Rights Reserved
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <a href="index.html" class="brand">
+            <img src="assets/opt/logoht.jpg" alt="HASH-TAX Logo" class="brand-logo" width="34" height="34" loading="lazy" />
+            <span>HASH-TAX</span>
+          </a>
+          <div class="footer-links">
+            <a href="index.html#services" data-i18n="nav_services"></a>
+            <a href="index.html#pricing" data-i18n="nav_pricing"></a>
+            <a href="index.html#about" data-i18n="nav_about"></a>
+            <a href="articles.html" data-i18n="nav_articles"></a>
+            <a href="index.html#contact" data-i18n="nav_contact"></a>
+            <a href="https://mali.hash-tax.com" target="_blank" rel="noopener noreferrer" data-i18n="nav_mali"></a>
+          </div>
         </div>
-        <div class="credits">
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <div class="footer-bottom">
+          <span data-i18n="footer_copy"></span>
+          <span>info@hash-tax.com • LINE: @hashtax</span>
         </div>
       </div>
-    </footer><!-- End Footer -->
+    </footer>
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+    <script src="assets/js/i18n.js?v=20261119-4" defer></script>
+    <script src="assets/js/app.js?v=20261119-4" defer></script>
   </body>
-</html> 
+</html>

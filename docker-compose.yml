@@ -1,0 +1,7 @@
+services:
+  hashtax-web:
+    build: .
+    container_name: hashtax-web
+    restart: unless-stopped
+    ports:
+      - "3002:80"
