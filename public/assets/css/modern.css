@@ -458,10 +458,10 @@ button {
    ========================================================= */
 .hero {
   position: relative;
-  min-height: 92vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--header-h) + 48px) 0 64px;
+  padding: calc(var(--header-h) + 24px) 0 48px;
   color: var(--white);
   background: var(--navy-950);
   overflow: hidden;
@@ -489,22 +489,22 @@ button {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 820px;
+  max-width: 1080px;
 }
 
 .hero h1 {
-  margin: 18px 0 16px;
-  font-size: clamp(2rem, 4.4vw, 3.35rem);
-  line-height: 1.18;
+  margin: 14px 0 14px;
+  font-size: clamp(1.85rem, 3.65vw, 3rem);
+  line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.015em;
 }
 
 .hero-subtitle {
-  margin: 0 0 30px;
-  font-size: clamp(1rem, 1.5vw, 1.18rem);
-  color: rgba(255, 255, 255, 0.86);
-  max-width: 680px;
+  margin: 0 0 26px;
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 780px;
   font-weight: 300;
 }
 
@@ -512,16 +512,16 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 44px;
+  margin-bottom: 36px;
 }
 
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  padding-top: 26px;
+  gap: 20px;
+  padding-top: 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
-  max-width: 660px;
+  max-width: 820px;
 }
 
 .stat-item strong {
@@ -774,6 +774,91 @@ button {
   width: 100%;
 }
 
+/* Featured Large Monthly Accounting Card */
+.price-card-wide {
+  background: var(--white);
+  border: 2px solid var(--blue-600);
+  border-radius: var(--radius-lg);
+  padding: 34px 32px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.price-wide-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 22px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.price-wide-head h3 {
+  margin: 0 0 4px;
+  font-size: 1.4rem;
+  color: var(--navy-900);
+}
+
+.price-wide-head .price-amount {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.price-wide-body {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.tax-subbox {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+}
+
+.tax-subbox h4 {
+  margin: 0 0 12px;
+  font-size: 0.98rem;
+  color: var(--navy-900);
+}
+
+.tax-subbox ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--slate-700);
+}
+
+.tax-subbox li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tax-subbox li svg {
+  width: 16px;
+  height: 16px;
+  color: var(--blue-600);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.price-footnote {
+  margin: 10px 0 16px;
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  line-height: 1.5;
+}
+
 /* =========================================================
    Mali Highlight Banner
    ========================================================= */
@@ -838,8 +923,55 @@ button {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
+}
+
+.team-avatar-placeholder {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  border: 3px solid var(--sky-100);
+  background: linear-gradient(135deg, var(--navy-900), var(--blue-600));
+  color: var(--white);
+  font-size: 1.45rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wechat-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  margin-bottom: 20px;
+}
+
+.wechat-box img {
+  width: 96px;
+  height: 96px;
+  border-radius: 10px;
+  border: 1px solid var(--slate-200);
+  background: var(--white);
+  flex-shrink: 0;
+}
+
+.wechat-box h4 {
+  margin: 0 0 4px;
+  font-size: 0.96rem;
+  color: #166534;
+}
+
+.wechat-box p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--slate-600);
 }
 
 .team-card {
@@ -1501,10 +1633,18 @@ button {
   .about-grid,
   .contact-grid,
   .pricing-grid,
+  .price-wide-body,
   .testimonials-grid,
   .articles-grid,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+  .price-card-wide {
+    padding: 24px 20px;
+  }
+  .wechat-box {
+    flex-direction: column;
+    text-align: center;
   }
   .split-grid.reverse .split-media {
     order: 0;

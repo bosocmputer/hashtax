@@ -28,6 +28,14 @@
     document.documentElement.lang = lang === "zh" ? "zh-Hans" : lang;
     const titleKey = document.body.getAttribute("data-title-key") || "page_title";
     if (dict[titleKey]) document.title = dict[titleKey];
+    if (dict.meta_description) {
+      const descMeta = document.querySelector('meta[name="description"]');
+      if (descMeta) descMeta.setAttribute("content", dict.meta_description);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute("content", dict.meta_description);
+    }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle && dict[titleKey]) ogTitle.setAttribute("content", dict[titleKey]);
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
@@ -152,34 +160,130 @@
 
     const contactForm = document.getElementById("contact-form");
     const formNote = document.getElementById("form-note");
+    const submitBtn = document.getElementById("contact-submit-btn");
     if (contactForm) {
-      contactForm.addEventListener("submit", (e) => {
+      contactForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         const name = document.getElementById("contact-name").value.trim();
-        const email = document.getElementById("contact-email").value.trim();
+        const contact = document.getElementById("contact-email").value.trim();
         const subject = document.getElementById("contact-subject").value.trim();
         const message = document.getElementById("contact-message").value.trim();
+        const dict = window.HASHTAX_I18N[currentLang] || {};
 
-        const body = [
-          "Name / ชื่อ: " + name,
-          "Contact / ติดต่อกลับ: " + email,
-          "",
-          message,
-        ].join("\n");
-
-        const mailto =
-          "mailto:info@hash-tax.com?subject=" +
-          encodeURIComponent("[HASH-TAX Web] " + subject) +
-          "&body=" +
-          encodeURIComponent(body);
-
+        if (submitBtn) submitBtn.disabled = true;
         if (formNote) {
-          const dict = window.HASHTAX_I18N[currentLang] || {};
-          formNote.textContent = dict.form_sent_note || "";
-          formNote.classList.add("success");
+          formNote.classList.remove("success");
+          formNote.textContent = dict.form_sending || "Sending...";
         }
-        window.location.href = mailto;
+
+        try {
+          const res = await fetch("https://mali.hash-tax.com/api/public/inquiries", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, contact, subject, message, lang: currentLang }),
+          });
+          if (!res.ok) throw new Error("API error");
+
+          if (formNote) {
+            formNote.textContent = dict.form_sent_mali || "Message received.";
+            formNote.classList.add("success");
+          }
+          contactForm.reset();
+        } catch {
+          const body = ["Name: " + name, "Contact: " + contact, "", message].join("\n");
+          if (formNote) {
+            formNote.textContent = dict.form_sent_note || "";
+            formNote.classList.add("success");
+          }
+          window.location.href =
+            "mailto:info@hash-tax.com?subject=" +
+            encodeURIComponent("[HASH-TAX Web] " + subject) +
+            "&body=" +
+            encodeURIComponent(body);
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+        }
       });
+    }
+
+    // Dynamic articles list from Mali CMS (articles.html)
+    const dynamicGrid = document.getElementById("dynamic-articles-grid");
+    if (dynamicGrid) {
+      fetch("https://mali.hash-tax.com/api/public/articles")
+        .then((r) => (r.ok ? r.json() : null))
+        .then((json) => {
+          const list = json && Array.isArray(json.data) ? json.data : [];
+          if (!list.length) return;
+          const dict = window.HASHTAX_I18N[currentLang] || {};
+          const readLabel = dict.art_read_btn || "อ่านเพิ่มเติม";
+          const frag = document.createDocumentFragment();
+          list.forEach((a) => {
+            const card = document.createElement("article");
+            card.className = "article-card";
+            const url = "article-1.html?slug=" + encodeURIComponent(a.slug);
+            const cover = a.coverUrl || "assets/opt/image2.jpg";
+            const dateStr = a.publishedAt
+              ? new Date(a.publishedAt).toLocaleDateString("th-TH", { dateStyle: "medium" })
+              : "";
+            card.innerHTML =
+              '<a href="' + url + '"><img src="' + cover + '" alt="" class="article-card-img" loading="lazy" /></a>' +
+              '<div class="article-card-body">' +
+              '<div class="article-meta"><span></span><span>•</span><span></span></div>' +
+              '<h2><a href="' + url + '"></a></h2>' +
+              '<p></p>' +
+              '<a href="' + url + '" class="btn btn-primary"></a>' +
+              "</div>";
+            const spans = card.querySelectorAll(".article-meta span");
+            spans[0].textContent = a.authorName || "ทีมงาน HASH-TAX";
+            spans[2].textContent = dateStr;
+            card.querySelector("h2 a").textContent = a.title;
+            card.querySelector("p").textContent = a.excerpt;
+            card.querySelector(".btn").textContent = readLabel;
+            frag.appendChild(card);
+          });
+          dynamicGrid.prepend(frag);
+        })
+        .catch(() => {});
+    }
+
+    // Dynamic single article from Mali CMS (article-1.html?slug=...)
+    const slugParam = new URLSearchParams(window.location.search).get("slug");
+    const proseEl = document.getElementById("article-prose");
+    if (slugParam && proseEl) {
+      fetch("https://mali.hash-tax.com/api/public/articles/" + encodeURIComponent(slugParam))
+        .then((r) => (r.ok ? r.json() : null))
+        .then((json) => {
+          const a = json && json.data;
+          if (!a) return;
+          document.title = a.title + " | HASH-TAX";
+          const titleEl = document.getElementById("article-title");
+          const authorEl = document.getElementById("article-author");
+          const dateEl = document.getElementById("article-date");
+          const coverEl = document.getElementById("article-cover");
+          if (titleEl) {
+            titleEl.removeAttribute("data-i18n");
+            titleEl.textContent = a.title;
+          }
+          if (authorEl) {
+            authorEl.removeAttribute("data-i18n");
+            authorEl.textContent = a.authorName || "ทีมงาน HASH-TAX";
+          }
+          if (dateEl && a.publishedAt) {
+            dateEl.removeAttribute("data-i18n");
+            dateEl.textContent = new Date(a.publishedAt).toLocaleDateString("th-TH", { dateStyle: "medium" });
+          }
+          if (coverEl && a.coverUrl) coverEl.src = a.coverUrl;
+          proseEl.innerHTML = "";
+          a.content.split(/\n{2,}/).forEach((para) => {
+            const trimmed = para.trim();
+            if (!trimmed) return;
+            const p = document.createElement("p");
+            p.textContent = trimmed;
+            p.style.whiteSpace = "pre-line";
+            proseEl.appendChild(p);
+          });
+        })
+        .catch(() => {});
     }
 
     const revealEls = document.querySelectorAll(".reveal");
